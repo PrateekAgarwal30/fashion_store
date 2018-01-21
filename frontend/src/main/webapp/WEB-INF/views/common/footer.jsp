@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container footer">
 
 	<hr>
 
@@ -7,7 +7,7 @@
 	<footer>
 		<div class="row">
 			<div class="col-lg-12">
-				<p>Copyright &copy; Your Website 2014</p>
+				<p align='center'>Copyright &copy; The Fashion Store 2018</p>
 			</div>
 		</div>
 	</footer>

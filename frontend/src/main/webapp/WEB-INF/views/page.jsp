@@ -18,9 +18,10 @@
 
 <title>Fashion Store - ${title}</title>
 <script type="text/javascript">
-window.menu = "${title}"</script>
+	window.menu = "${title}"
+</script>
 <!-- Bootstrap Core CSS -->
- <link href="${css}/bootstrap.min.css" rel="stylesheet">
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 <%--  <link href="${css}/bootstrap-simplex-theme.css" rel="stylesheet"> --%>
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -36,32 +37,36 @@ window.menu = "${title}"</script>
 
 <body>
 
-	<!-- Navigation -->
-	<jsp:include page="./common/navigation.jsp"></jsp:include>
-	<!-- Page Content -->
-	<c:if test="${homeButtonClicked == true}">
-		<jsp:include page="home.jsp"></jsp:include>
-	</c:if>
-	<c:if test="${aboutButtonClicked == true}">
-		<jsp:include page="about.jsp"></jsp:include>
-	</c:if>
-	<c:if test="${contactButtonClicked == true}">
-		<jsp:include page="contact.jsp"></jsp:include>
-	</c:if>
-	<c:if test="${productsButtonClicked == true}">
-		<jsp:include page="products.jsp"></jsp:include>
-	</c:if>
-	<!-- FOOTER -->
-	<jsp:include page="./common/footer.jsp"></jsp:include>
+	<div class="wrapper">
 
-	<!-- jQuery -->
-	<script src="${js}/jquery.js"></script>
+		<!-- Navigation -->
+		<jsp:include page="./common/navigation.jsp"></jsp:include>
+		<div class="content">
+			<!-- Page Content -->
+			<c:if test="${homeButtonClicked == true}">
+				<jsp:include page="home.jsp"></jsp:include>
+			</c:if>
+			<c:if test="${aboutButtonClicked == true}">
+				<jsp:include page="about.jsp"></jsp:include>
+			</c:if>
+			<c:if test="${contactButtonClicked == true}">
+				<jsp:include page="contact.jsp"></jsp:include>
+			</c:if>
+			<c:if test="${productsButtonClicked == true}">
+				<jsp:include page="products.jsp"></jsp:include>
+			</c:if>
+		</div>
+		<!-- FOOTER -->
+		<jsp:include page="./common/footer.jsp"></jsp:include>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="${js}/bootstrap.min.js"></script>
-	<!-- Custom JavaScript -->
-	<script src="${js}/custom.js"></script>
+		<!-- jQuery -->
+		<script src="${js}/jquery.js"></script>
 
+		<!-- Bootstrap Core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
+		<!-- Custom JavaScript -->
+		<script src="${js}/custom.js"></script>
+	</div>
 </body>
 
 </html>
