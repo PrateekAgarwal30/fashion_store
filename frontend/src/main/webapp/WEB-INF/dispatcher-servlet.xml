@@ -12,6 +12,7 @@
     ">
 
 	<context:component-scan base-package="pa.fashion_store.controller" />
+	<context:component-scan base-package="pa.backend.daoimpl" />
 
 
 	<bean id="viewResolver"
@@ -21,7 +22,7 @@
 		<property name="suffix" value=".jsp" />
 
 	</bean>
-	<!--  Loading Static Resources-->
+	<!-- Loading Static Resources -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<mvc:resources location="/assets/" mapping="/resources/**"></mvc:resources>
 
