@@ -7,6 +7,4 @@
 		<p>Product List</p>
 
 	</div>
-
-
 </div>
