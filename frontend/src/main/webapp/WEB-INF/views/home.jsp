@@ -4,7 +4,7 @@
 	<div class="row">
 
 		<div class="col-md-3">
-			<jsp:include page="./common/categories.jsp"></jsp:include>
+			<jsp:include page="./common/sidebar.jsp"></jsp:include>
 		</div>
 
 		<div class="col-md-9">

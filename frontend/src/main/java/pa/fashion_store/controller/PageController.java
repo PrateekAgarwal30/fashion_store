@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import pa.backend.dao.CategoryDAO;
+import pa.backend.dto.Category;
 
 @Controller
 public class PageController {
@@ -35,32 +35,23 @@ public class PageController {
 		mv.addObject("contactButtonClicked", true);
 		return mv;
 	}
-	@RequestMapping(value ="/products")
+	@RequestMapping(value ="/show/all/products")
 	public ModelAndView products() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Products");
+		mv.addObject("categories",categoryDAO.list());
 		mv.addObject("productsButtonClicked", true);
 		return mv;
 	}
-	@RequestMapping(value = "/test")
-	public ModelAndView test(@RequestParam(value = "name", required = false) String name) {
+	@RequestMapping(value ="/show/category/{id}/products")
+	public ModelAndView categoryProducts(@PathVariable("id") int id) {
 		ModelAndView mv = new ModelAndView("page");
-		if (name == null) {
-			name = "Guest";
-		}
-		mv.addObject("greeting", "Welcome " + name + " !");
-		return mv;
-
-	}
-
-	@RequestMapping(value = "/test/{name}")
-	public ModelAndView test1(@PathVariable(value = "name", required = false) String name) {
-		ModelAndView mv = new ModelAndView("page");
-		if (name == null) {
-			name = "Guest";
-		}
-		mv.addObject("greeting", "Welcome " + name + " !");
+		Category category = null;
+		category = categoryDAO.get(id);
+		mv.addObject("title", category.getName());
+		mv.addObject("category", category);
+		mv.addObject("categories",categoryDAO.list());
+		mv.addObject("categoryProductsButtonClicked", true);
 		return mv;
 	}
-
 }

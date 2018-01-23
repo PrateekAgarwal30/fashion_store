@@ -19,6 +19,7 @@
 <title>Fashion Store - ${title}</title>
 <script type="text/javascript">
 	window.menu = "${title}"
+	window.category = "${category.name}"
 </script>
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +53,7 @@
 			<c:if test="${contactButtonClicked == true}">
 				<jsp:include page="contact.jsp"></jsp:include>
 			</c:if>
-			<c:if test="${productsButtonClicked == true}">
+			<c:if test="${productsButtonClicked == true or categoryProductsButtonClicked == true}">
 				<jsp:include page="products.jsp"></jsp:include>
 			</c:if>
 		</div>
