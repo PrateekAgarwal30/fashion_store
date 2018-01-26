@@ -5,8 +5,17 @@ import java.util.List;
 import pa.backend.dto.Category;
 
 public interface CategoryDAO {
-	boolean addCategory(Category category);
+
 	List<Category> list();
+	
 
 	Category get(int id);
+
+	boolean addCategory(Category category);
+
+	boolean updateCategory(Category category);
+
+	boolean deleteCategory(Category category);
+//	boolean dropTable(List<Category> list);
+
 }
