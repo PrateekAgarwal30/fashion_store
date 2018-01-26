@@ -1,16 +1,35 @@
 package pa.backend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
 	/* Private Variables */
-	
-	int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	Integer id;
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
+
+	@Column(name = "name")
 	String name;
+	@Column(name = "description")
 	String description;
+	@Column(name = "image_url")
 	String imageURL;
+	@Column(name = "isActive")
 	boolean active = true;
 
 	/* Getter and Setters */
-	
+
 	public int getId() {
 		return id;
 	}
@@ -50,5 +69,5 @@ public class Category {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
+
 }

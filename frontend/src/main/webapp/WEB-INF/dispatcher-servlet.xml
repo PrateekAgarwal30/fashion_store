@@ -12,7 +12,7 @@
     ">
 
 	<context:component-scan base-package="pa.fashion_store.controller" />
-	<context:component-scan base-package="pa.backend.daoimpl" />
+	<context:component-scan base-package="pa.backend" />
 
 
 	<bean id="viewResolver"

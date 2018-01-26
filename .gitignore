@@ -23,3 +23,6 @@ hs_err_pid*
 
 /frontend/target
 /backend/target
+/h2-2017-06-10
+/node_modules
+/package-lock.json
