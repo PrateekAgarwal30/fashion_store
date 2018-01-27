@@ -61,14 +61,22 @@ html {
 	min-height: 100%;
 	position: relative;
 }
-.footer{
-	position : absolute;
+
+.footer {
+	position: absolute;
 	bottom: 15px;
-	height : 60px;
+	height: 60px;
 }
-.content{
+
+.content {
 	padding-bottom: 60px;
 }
+
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-    padding: 0.01em !important;
+	padding: 0.01em !important;
+}
+
+.dataTableImage {
+	width: 120px;
+	height: 160px;
 }

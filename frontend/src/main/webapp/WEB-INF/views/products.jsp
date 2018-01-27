@@ -37,13 +37,13 @@
 						id="productListTable" cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th></th>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Price</th>
-								<th>Views</th>
-								<th>Available Qty</th>
-								<th></th>
+								<th align="center"></th>
+								<th align="center">Name</th>
+								<th align="center">Brand</th>
+								<th align="center">Price</th>
+								<th align="center">Views</th>
+								<th align="center">Available Qty</th>
+								<th align="center"></th>
 
 							</tr>
 						</thead>

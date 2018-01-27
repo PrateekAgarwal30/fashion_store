@@ -44,7 +44,7 @@ $(function() {
 									data : "code",
 									orderable : false,
 									mRender : function(data) {
-										return "<img src='"+ window.contextRoot+ "/resources/images/" + data + ".png'>"
+										return "<img src='"+ window.contextRoot+ "/resources/images/" + data + ".png' class='dataTableImage'>";
 									}
 								},
 								{
