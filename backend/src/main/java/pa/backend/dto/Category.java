@@ -11,7 +11,7 @@ public class Category {
 	/* Private Variables */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	int id;
 
 	@Override
 	public String toString() {
@@ -19,13 +19,13 @@ public class Category {
 				+ ", active=" + active + "]";
 	}
 
-	@Column(name = "name")
+	@Column(name = "NAME")
 	String name;
-	@Column(name = "description")
+	@Column(name = "DESCRIPTION")
 	String description;
-	@Column(name = "image_url")
+	@Column(name = "IMAGE_URL")
 	String imageURL;
-	@Column(name = "isActive")
+	@Column(name = "IS_ACTIVE")
 	boolean active = true;
 
 	/* Getter and Setters */
