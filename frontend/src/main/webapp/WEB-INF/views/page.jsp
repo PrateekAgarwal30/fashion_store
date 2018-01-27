@@ -24,9 +24,11 @@
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 <%--  <link href="${css}/bootstrap-simplex-theme.css" rel="stylesheet"> --%>
+
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
-
+<!-- DataTable CSS -->
+<link href="${css}/jquery.dataTables.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -53,7 +55,8 @@
 			<c:if test="${contactButtonClicked == true}">
 				<jsp:include page="contact.jsp"></jsp:include>
 			</c:if>
-			<c:if test="${productsButtonClicked == true or categoryProductsButtonClicked == true}">
+			<c:if
+				test="${productsButtonClicked == true or categoryProductsButtonClicked == true}">
 				<jsp:include page="products.jsp"></jsp:include>
 			</c:if>
 		</div>
@@ -67,6 +70,8 @@
 		<script src="${js}/bootstrap.min.js"></script>
 		<!-- Custom JavaScript -->
 		<script src="${js}/custom.js"></script>
+		<!-- DataTable JavaScript -->
+		<script src="${js}/jquery.dataTables.js"></script>
 	</div>
 </body>
 

@@ -16,6 +16,5 @@ public interface CategoryDAO {
 	boolean updateCategory(Category category);
 
 	boolean deleteCategory(Category category);
-//	boolean dropTable(List<Category> list);
 
 }

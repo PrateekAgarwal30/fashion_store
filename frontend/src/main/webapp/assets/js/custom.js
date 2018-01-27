@@ -19,4 +19,18 @@ $(function() {
 		}
 
 	}
-})
+
+	var list = [ [ '1', 'Z' ], 
+				 [ '2', 'Y' ], 
+				 [ '3', 'X' ], 
+				 [ '4', 'W' ],
+				 [ '5', 'V' ] 
+	];
+	$(document).ready(function() {
+	    $('#productListTable').DataTable( {
+	        data: list,
+	        pageLength:5,
+	        lengthMenu:[[1,2,3,-1],['1R','2R','3R','All']]
+	    } );
+	} );
+});
