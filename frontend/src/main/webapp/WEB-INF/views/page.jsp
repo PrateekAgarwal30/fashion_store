@@ -5,6 +5,7 @@
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
 <spring:url var="images" value="/resources/images" />
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +19,8 @@
 
 <title>Fashion Store - ${title}</title>
 <script type="text/javascript">
-	window.menu = "${title}"
-	window.category = "${category.name}"
+	window.menu = "${title}";
+	window.contextRoot = "${contextRoot}";
 </script>
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +30,7 @@
 <link href="${css}/myapp.css" rel="stylesheet">
 <!-- DataTable CSS -->
 <link href="${css}/jquery.dataTables.css" rel="stylesheet">
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -72,6 +74,7 @@
 		<script src="${js}/custom.js"></script>
 		<!-- DataTable JavaScript -->
 		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/dataTables.bootstrap.js"></script>
 	</div>
 </body>
 

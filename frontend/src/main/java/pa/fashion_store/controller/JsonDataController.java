@@ -16,12 +16,12 @@ import pa.backend.dto.Product;
 public class JsonDataController {
 	@Autowired
 	private ProductDAO productDAO;
-	@RequestMapping(value = "/all/products/")
+	@RequestMapping(value = "/all/products")
 	@ResponseBody
 	public List<Product> getAllProducts(){
 		return productDAO.getAllAvailableProducts();
 	}
-	@RequestMapping(value = "/category/{id}/products/")
+	@RequestMapping(value = "/category/{id}/products")
 	@ResponseBody
 	public List<Product> getAllProducts(@PathVariable("id") int id){
 		return productDAO.getAvailableProductsByCategoryId(id);

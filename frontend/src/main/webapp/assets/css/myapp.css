@@ -69,3 +69,6 @@ html {
 .content{
 	padding-bottom: 60px;
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.01em !important;
+}

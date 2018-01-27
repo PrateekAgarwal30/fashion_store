@@ -20,17 +20,79 @@ $(function() {
 
 	}
 
-	var list = [ [ '1', 'Z' ], 
-				 [ '2', 'Y' ], 
-				 [ '3', 'X' ], 
-				 [ '4', 'W' ],
-				 [ '5', 'V' ] 
-	];
-	$(document).ready(function() {
-	    $('#productListTable').DataTable( {
-	        data: list,
-	        pageLength:5,
-	        lengthMenu:[[1,2,3,-1],['1R','2R','3R','All']]
-	    } );
-	} );
+	var jsonURL = '';
+	if (window.categoryId == "") {
+		jsonURL = window.contextRoot + "/json/data/all/products";
+	} else {
+		jsonURL = window.contextRoot + "/json/data/category/"
+				+ window.categoryId + "/products";
+	}
+	$('#productListTable')
+			.DataTable(
+					{
+						"lengthMenu" : [
+								[ 5, 10, 25, -1 ],
+								[ '5 Records', '10 Records', '25 Records',
+										'All' ] ],
+						"pageLength" : 5,
+						"ajax" : {
+							"url" : jsonURL,
+							"dataSrc" : ""
+						},
+						"columns" : [
+								{
+									data : "code",
+									orderable : false,
+									mRender : function(data) {
+										return "<img src='"+ window.contextRoot+ "/resources/images/" + data + ".png'>"
+									}
+								},
+								{
+									data : "name"
+								},
+								{
+									data : "brand"
+								},
+								{
+									data : "unitPrice",
+									mRender : function(data) {
+										return "&#8377;" + data;
+									}
+								},
+								{
+									data : "views"
+								},
+								{
+									data : "availableQty",
+									mRender : function(data) {
+										if (data < 1) {
+											data = 'Out of Stock';
+										}
+										return data;
+									}
+
+								},
+								{
+									data : "id",
+									orderable : false,
+									mRender : function(data) {
+										var temp = "<a href='"
+												+ window.contextRoot
+												+ "/show/category/"
+												+ data
+												+ "/products"
+												+ "' class='btn btn-primary'><span class='glyphicon glyphicon-eye-open'></span></a>";
+										temp += "&nbsp;&nbsp;";
+										temp += "<a href='"
+												+ window.contextRoot
+												+ "/show/category/"
+												+ data
+												+ "/products"
+												+ "' class='btn btn-success'><span class='glyphicon glyphicon-shopping-cart'></span></a>";
+										return temp;
+									}
+								}
+
+						]
+					});
 });
