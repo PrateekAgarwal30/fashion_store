@@ -78,9 +78,9 @@ $(function() {
 									mRender : function(data) {
 										var temp = "<a href='"
 												+ window.contextRoot
-												+ "/show/category/"
+												+ "/show/"
 												+ data
-												+ "/products"
+												+ "/product"
 												+ "' class='btn btn-primary'><span class='glyphicon glyphicon-eye-open'></span></a>";
 										temp += "&nbsp;&nbsp;";
 										temp += "<a href='"

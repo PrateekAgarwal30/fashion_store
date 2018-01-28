@@ -61,6 +61,10 @@
 				test="${productsButtonClicked == true or categoryProductsButtonClicked == true}">
 				<jsp:include page="products.jsp"></jsp:include>
 			</c:if>
+			<c:if
+				test="${showProductClicked == true}">
+				<jsp:include page="singleProduct.jsp"></jsp:include>
+			</c:if>
 		</div>
 		<!-- FOOTER -->
 		<jsp:include page="./common/footer.jsp"></jsp:include>

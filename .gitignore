@@ -26,3 +26,5 @@ hs_err_pid*
 /h2-2017-06-10
 /node_modules
 /package-lock.json
+/.classpath
+/.project
