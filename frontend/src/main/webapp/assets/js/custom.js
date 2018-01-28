@@ -44,7 +44,11 @@ $(function() {
 									data : "code",
 									orderable : false,
 									mRender : function(data) {
-										return "<img src='"+ window.contextRoot+ "/resources/images/" + data + ".png' class='dataTableImage'>";
+										return "<img src='"
+												+ window.contextRoot
+												+ "/resources/images/"
+												+ data
+												+ ".png' class='dataTableImage'>";
 									}
 								},
 								{
@@ -95,4 +99,19 @@ $(function() {
 
 						]
 					});
+	$(document).ready(function() {
+		// grab all thumbnails and add bootstrap popovers
+		// https://getbootstrap.com/javascript/#popovers
+		$('[data-toggle="popover"]').popover({
+			container : 'body',
+			html : true,
+			placement : 'right',
+			trigger : 'hover',
+			content : function() {
+				// get the url for the full size img
+				var url = $(this).data('full');
+				return '<img id="abcd" src="' + url + '">'
+			}
+		});
+	});
 });

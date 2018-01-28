@@ -8,8 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pa.backend.dao.CategoryDAO;
 import pa.backend.dao.ProductDAO;
+import pa.backend.dao.ProductStockDAO;
+import pa.backend.dao.UserDetailsDAO;
 import pa.backend.dto.Category;
 import pa.backend.dto.Product;
+import pa.backend.dto.ProductStock;
+import pa.backend.dto.UserDetails;
 
 @Controller
 public class PageController {
@@ -17,6 +21,10 @@ public class PageController {
 	private CategoryDAO categoryDAO;
 	@Autowired
 	private ProductDAO productDAO;
+	@Autowired
+	private ProductStockDAO productStockDAO;
+	@Autowired
+	private UserDetailsDAO userDetailsDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
@@ -71,9 +79,13 @@ public class PageController {
 		Category category = categoryDAO.get(product.getCategoryId());
 		product.setViews(product.getViews() + 1);
 		productDAO.updateProduct(product);
+		UserDetails userDetails = userDetailsDAO.get(product.getSupplierId());
+		ProductStock productStock = productStockDAO.get(product.getProductStockId());
 		mv.addObject("title", product.getName());
 		mv.addObject("product", product);
+		mv.addObject("productStock", productStock);
 		mv.addObject("categoryName", category.getName());
+		mv.addObject("sellerName", userDetails.getFirstName()+" "+userDetails.getLastName());
 		mv.addObject("showProductClicked", true);
 		return mv;
 	}

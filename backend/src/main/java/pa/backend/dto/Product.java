@@ -40,17 +40,27 @@ public class Product {
 	@JsonIgnore
 	@Column(name = "CATEGORY_ID")
 	private int categoryId;
+	@Column(name = "PRODUCTSTOCK_ID")
+	private int productStockId;
 	@JsonIgnore
 	@Column(name = "SUPPLIER_ID")
 	private int supplierId;
+	public int getProductStockId() {
+		return productStockId;
+	}
+
+	public void setProductStockId(int productStockId) {
+		this.productStockId = productStockId;
+	}
+
 	private int views;
 
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", brand=" + brand + ", description=" + description + ", code="
 				+ code + ", unitPrice=" + unitPrice + ", availableQty=" + availableQty + ", soldQty=" + soldQty
-				+ ", active=" + active + ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", views="
-				+ views + "]";
+				+ ", active=" + active + ", categoryId=" + categoryId + ", productStockId=" + productStockId
+				+ ", supplierId=" + supplierId + ", views=" + views + "]";
 	}
 
 	public int getId() {

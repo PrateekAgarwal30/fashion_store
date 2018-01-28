@@ -1,4 +1,5 @@
-
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<spring:url var="images" value="/resources/images" />
 <div class="container">
 
 	<div class="row">
@@ -23,19 +24,19 @@
 						</ol>
 						<div class="carousel-inner">
 							<div class="item active">
-								<img class="slide-image" src="http://placehold.it/1200x400"
+								<img class="slide-image" src="${images}/home-banner-1.jpg"
 									alt="">
 							</div>
 							<div class="item">
-								<img class="slide-image" src="http://placehold.it/1200x400"
+								<img class="slide-image" src="http://placehold.it/1204x474"
 									alt="">
 							</div>
 							<div class="item">
-								<img class="slide-image" src="http://placehold.it/1200x400"
+								<img class="slide-image" src="${images}/home-banner-2.jpg"
 									alt="">
 							</div>
 							<div class="item">
-								<img class="slide-image" src="http://placehold.it/1200x400"
+								<img class="slide-image" src="http://placehold.it/1204x474"
 									alt="">
 							</div>
 						</div>
