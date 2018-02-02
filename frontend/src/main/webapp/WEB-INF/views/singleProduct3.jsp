@@ -33,43 +33,39 @@
 </c:choose>
 <div class="container">
 	<div class="row">
-		<nav style="margin-top: 10px;">
+		<nav id="abcd">
 			<div class="nav-wrapper">
 				<div class="col s12">
 					<div>
-						<a href="/fashion_store/home" class="breadcrumb">Home</a> <a
-							href="/fashion_store/show/all/products" class="breadcrumb">Products</a>
-						<a href="/fashion_store/show/category/1/products"
-							class="breadcrumb">Tshirts</a> <a class="active breadcrumb">Show</a>
-						<a class="active breadcrumb">SHIELD UNITED</a>
+						<a href="${contextRoot}/home" class="breadcrumb">Home</a> <a
+							href="${contextRoot}/show/all/products" class="breadcrumb">Products</a>
+						<a
+							href="${contextRoot}/show/category/${product.getCategoryId()}/products"
+							class="breadcrumb">${categoryName}</a> <a
+							class="active breadcrumb">Show</a> <a class="active breadcrumb">${title}</a>
 					</div>
 				</div>
 			</div>
 		</nav>
-		<div class="nav-wrapper">
-			<div class="col s12">
-				<div>
-					<a href="${contextRoot}/home" class="breadcrumb">Home</a> <a
-						href="${contextRoot}/show/all/products" class="breadcrumb">Products</a>
-					<a
-						href="${contextRoot}/show/category/${product.getCategoryId()}/products"
-						class="breadcrumb">${categoryName}</a> <a
-						class="active breadcrumb">Show</a> <a class="active breadcrumb">${title}</a>
-				</div>
-			</div>
-		</div>
-		</nav>
 	</div>
-	<div class="row">
-		<div class="col s12">
-			<div class="card">
-				<div class="card-image col s12 m6 l4" style="top: 20px;">
-					<img src="${contextRoot}/resources/images/${product.getCode()}.png" />
-				</div>
-				<div class="card-content col s12 m6 l8">
-					<h4>${product.getName()}</h4>
-					<h6>Brand : ${product.getBrand()}</h6>
-					<p>Sold By : ${sellerName}</p>
+	<div class="col s12">
+		<div class="card horizontal">
+			<div class="card-image">
+				<img src="${contextRoot}/resources/images/${product.getCode()}.png" />
+			</div>
+			<div class="card-stacked">
+				<div class="card-content">
+					<div class="row">
+						<div class="col m8 s12">
+							<h4>${product.getName()}</h4>
+						</div>
+						<div class="col m4 s6">
+							<h6>Brand : ${product.getBrand()}</h6>
+						</div>
+						<div class="col m4 s6">
+							<h6>Sold By : ${sellerName}</h6>
+						</div>
+					</div>
 					<p>
 						Description : ${product.getDescription()} <br> Lorem ipsum
 						dolor sit amet, consectetur adipiscing elit. Fusce auctor massa ac
@@ -91,60 +87,48 @@
 						Phasellus sodales dui vitae quam feugiat, vitae eleifend lectus
 						lacinia.
 					</p>
-					<br>
-					<h6>
-						<strong>Price : &#8377;${product.getUnitPrice()}</strong>
-					</h6>
+					<br> <strong>Price : &#8377;${product.getUnitPrice()}</strong>
+				</div>
+				<div class="card-action">
 					<div class="row">
-						<div class="col s6 m4 l2">
-							<a class="btn" ${XS}><small>&nbsp;XS</small></a>
+						<div class="col s3">
+							<strong>SelectSize :</strong>
 						</div>
-						<div class="col s6 m4 l2">
-							<a class="btn" ${S}><small>&nbsp;S&nbsp;</small></a>
-						</div>
-						<div class="col s6 m4 l2">
-							<a class="btn" ${M}><small>&nbsp;M&nbsp;</small></a>
-						</div>
-						<div class="col s6 m4 l2">
-							<a class="btn" ${L}><small>&nbsp;L&nbsp;</small></a>
-						</div>
-						<div class="col s6 m4 l2">
-							<a class="btn" ${XL}><small>&nbsp;XL</small></a>
-						</div>
-						<div class="col s6 m4 l2">
-							<a class="btn" ${XXL}><small>XXL</small></a>
+						<div class="col s9 right">
+							<a class="btn btn-info" ${XS}><small>XS</small></a> &nbsp; <a
+								class="btn btn-info" ${S}><small>S</small></a> &nbsp; <a
+								class="btn btn-info" ${M}><small>M</small></a> &nbsp; <a
+								class="btn btn-info" ${L}><small>L</small></a> &nbsp; <a
+								class="btn btn-info" ${XL}><small>XL</small></a> &nbsp; <a
+								class="btn btn-info" ${XXL}><small>XXL</small></a> &nbsp;
 						</div>
 					</div>
 					<div class="row">
-						<div class="col s12 m2">
+						<div class="col s2">
 							<input type="number" class="form-control text-center" ${disabled}
-								value="1" min="1" max="20">
+								value="1" min="1" max="20" style="height: 30px;">
 						</div>
-						<div class="col s12 m2"></div>
-						<div class="col s12 m4">
+						<div class="col s4"></div>
+						<div class="col s3">
 							<c:choose>
 								<c:when test="${productStock.isENABLED()}">
-									<a class="btn"
+									<a class="btn btn-success" style='float: right;'
 										href="${contextRoot}/show/category/${product.getCategoryId()}/products">Add
 										to Cart</a>
 								</c:when>
 								<c:otherwise>
-									<strong style="font-size: 24px; color: red;">Out Of
-										Stock!</strong>
+									<strong>Out Of Stock!</strong>
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="col s12 m4">
-							<a class="btn"
+						<div class="col s3 right">
+							<a style="float: right;" class="btn btn-warning"
 								href="${contextRoot}/show/category/${product.getCategoryId()}/products">Back</a>
 						</div>
+
 					</div>
-				</div>
-				<div class="card-action">
-					<a></a>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </div>

@@ -3,10 +3,10 @@
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col s12 m4 l3">
 			<jsp:include page="./common/sidebar.jsp"></jsp:include>
 		</div>
-		<div class="col-md-9">
+		<div class="col s12 m8 l9">
 			<div class="row">
 				<div class="col-lg-12">
 					<c:if test="${productsButtonClicked == true}">
@@ -33,7 +33,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<table class="table table-striped table-bordered"
+					<table class="table table-striped table-bordered responsive-table"
 						id="productListTable" cellspacing="0" width="100%">
 						<thead>
 							<tr>

@@ -22,8 +22,10 @@
 	window.menu = "${title}";
 	window.contextRoot = "${contextRoot}";
 </script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <!-- Bootstrap Core CSS -->
-<link href="${css}/bootstrap.min.css" rel="stylesheet">
+<%-- <link href="${css}/bootstrap.min.css" rel="stylesheet"> --%>
 <%--  <link href="${css}/bootstrap-simplex-theme.css" rel="stylesheet"> --%>
 
 <!-- Custom CSS -->
@@ -31,6 +33,7 @@
 <!-- DataTable CSS -->
 <link href="${css}/jquery.dataTables.css" rel="stylesheet">
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+<link href="${css}/materialize.css" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -41,7 +44,6 @@
 </head>
 
 <body>
-
 	<div class="wrapper">
 
 		<!-- Navigation -->
@@ -61,8 +63,7 @@
 				test="${productsButtonClicked == true or categoryProductsButtonClicked == true}">
 				<jsp:include page="products.jsp"></jsp:include>
 			</c:if>
-			<c:if
-				test="${showProductClicked == true}">
+			<c:if test="${showProductClicked == true}">
 				<jsp:include page="singleProduct.jsp"></jsp:include>
 			</c:if>
 		</div>
@@ -79,6 +80,7 @@
 		<!-- DataTable JavaScript -->
 		<script src="${js}/jquery.dataTables.js"></script>
 		<script src="${js}/dataTables.bootstrap.js"></script>
+		<script src="${js}/materialize.js"></script>
 	</div>
 </body>
 

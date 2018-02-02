@@ -31,8 +31,8 @@ $(function() {
 			.DataTable(
 					{
 						"lengthMenu" : [
-								[ 5, 10, 25, -1 ],
-								[ '5 Records', '10 Records', '25 Records',
+								[ 1, 2, 3, -1 ],
+								[ '1 Records', '2 Records', '3 Records',
 										'All' ] ],
 						"pageLength" : 5,
 						"ajax" : {
@@ -85,14 +85,14 @@ $(function() {
 												+ "/show/"
 												+ data
 												+ "/product"
-												+ "' class='btn btn-primary'><span class='glyphicon glyphicon-eye-open'></span></a>";
+												+ "' class='btn waves-effect waves-light btn-small'> <i class='small material-icons'>remove_red_eye</i></a>";
 										temp += "&nbsp;&nbsp;";
 										temp += "<a href='"
 												+ window.contextRoot
 												+ "/show/category/"
 												+ data
 												+ "/products"
-												+ "' class='btn btn-success'><span class='glyphicon glyphicon-shopping-cart'></span></a>";
+												+ "' class='btn waves-effect waves-light btn-small'><i class='small material-icons'>add_shopping_cart</i></a>";
 										return temp;
 									}
 								}
@@ -100,8 +100,7 @@ $(function() {
 						]
 					});
 	$(document).ready(function() {
-		// grab all thumbnails and add bootstrap popovers
-		// https://getbootstrap.com/javascript/#popovers
+		$('.carousel.carousel-slider').carousel();
 		$('[data-toggle="popover"]').popover({
 			container : 'body',
 			html : true,

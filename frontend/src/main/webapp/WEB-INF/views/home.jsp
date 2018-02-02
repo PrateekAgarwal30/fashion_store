@@ -4,49 +4,35 @@
 
 	<div class="row">
 
-		<div class="col-md-3">
+		<div class="col s3">
 			<jsp:include page="./common/sidebar.jsp"></jsp:include>
 		</div>
 
-		<div class="col-md-9">
+		<div class="col s9">
 
 			<div class="row carousel-holder">
 
 				<div class="col-md-12">
-					<div id="carousel-example-generic" class="carousel slide"
-						data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#carousel-example-generic" data-slide-to="0"
-								class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="item active">
-								<img class="slide-image" src="${images}/home-banner-1.jpg"
-									alt="">
-							</div>
-							<div class="item">
-								<img class="slide-image" src="http://placehold.it/1204x474"
-									alt="">
-							</div>
-							<div class="item">
-								<img class="slide-image" src="${images}/home-banner-2.jpg"
-									alt="">
-							</div>
-							<div class="item">
-								<img class="slide-image" src="http://placehold.it/1204x474"
-									alt="">
-							</div>
+					<div class="carousel carousel-slider center" data-indicators="true">
+						<div class="carousel-fixed-item center">
+							<a class="btn waves-effect white grey-text darken-text-2">button</a>
 						</div>
-						<a class="left carousel-control" href="#carousel-example-generic"
-							data-slide="prev"> <span
-							class="glyphicon glyphicon-chevron-left"></span>
-						</a> <a class="right carousel-control"
-							href="#carousel-example-generic" data-slide="next"> <span
-							class="glyphicon glyphicon-chevron-right"></span>
-						</a>
+						<div class="carousel-item red white-text" href="#one!">
+							<h2>First Panel</h2>
+							<p class="white-text">This is your first panel</p>
+						</div>
+						<div class="carousel-item amber white-text" href="#two!">
+							<h2>Second Panel</h2>
+							<p class="white-text">This is your second panel</p>
+						</div>
+						<div class="carousel-item green white-text" href="#three!">
+							<h2>Third Panel</h2>
+							<p class="white-text">This is your third panel</p>
+						</div>
+						<div class="carousel-item blue white-text" href="#four!">
+							<h2>Fourth Panel</h2>
+							<p class="white-text">This is your fourth panel</p>
+						</div>
 					</div>
 				</div>
 

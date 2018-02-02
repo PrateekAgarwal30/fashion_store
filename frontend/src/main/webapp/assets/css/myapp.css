@@ -4,7 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-	padding-top: 70px;
 	height: 100%
 		/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -95,6 +94,10 @@ body .popover {
 	max-width: 510px !important;
 }
 
-#abcd {
-	max-width: 480px !important;
+.container {
+	width: 90% !important;
+}
+
+.btn, .btn-large, .btn-flat {
+	padding: 0 1.3rem !important;
 }

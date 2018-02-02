@@ -1,8 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-<p class="lead">Shop Name</p>
-<div class="list-group">
-	<c:forEach items="${categories}" var="category">
-		<a href="${contextRoot}/show/category/${category.id}/products" id ="a_${category.name}"class="list-group-item">${category.name}</a>
-	</c:forEach>
+<div class="container">
+	<ul class="collection with-header">
+		<li class="collection-header"><h6>Shop Now</h6></li>
+		<c:forEach items="${categories}" var="category">
+			<li class="collection-item" id="a_${category.name}"><a
+				href="${contextRoot}/show/category/${category.id}/products">${category.name}</a></li>
+		</c:forEach>
+	</ul>
 </div>
